@@ -1,0 +1,23 @@
+{
+  "name": "nodemysql",
+  "version": "1.0.0",
+  "description": "NodeMysql",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jairoinfinity/NodeMysql.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jairoinfinity/NodeMysql/issues"
+  },
+  "homepage": "https://github.com/Jairoinfinity/NodeMysql#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql": "^2.16.0"
+  }
+}
