@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>$(document).ready(function () {
+
+                var temp = <%= temp %>;
+                var empMa = <%= tempMax %>;
+                var empMi = <%= tempMin %>;
+
+                $("h2").text("Estas en <%= Ciudad %> y hace una temperatura de " + temp + "ºC");
+
+                google.charts.load('current', { 'packages': ['corechart'] });
+                google.charts.setOnLoadCallback(drawChart);
+
+                function drawChart() {
+                    var container = document.getElementById('timeline');
+                    var chart = new google.visualization.BarChart(container);
+                    var dataTable = new google.visualization.DataTable();
+
+                    dataTable.addColumn({ type: 'string', id: 'temperaturas' });
+                    dataTable.addColumn({ type: 'number', id: 'temp' });
+
+                    dataTable.addRows([
+                        ['Temp Maxima', empMa],
+                        ['Temp Actual', temp],
+                        ['Temp Minima', empMi]
+                    ]);
+
+                    chart.draw(dataTable);
+                }
+            });</script>
+
+    <title>App Tiempo</title>
+</head>
+
+<body>
+    <h1>Ciudad</h1>
+    <h2></h2>
+    <div id="timeline"></div>
+</body>
+
+</html>
